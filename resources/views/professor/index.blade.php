@@ -13,30 +13,38 @@
         <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
       </div>
     </div><!-- End Breadcrumbs -->
+    <br />
 
-    <form method="POST" action="/professor">
+    <div class="container">
+    <form method="POST" action="/professor" class="row">
       <div class="form-group col-6">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" value="{{ $professor->nome }}" />
+        <input type="text" name="nome" id="nome" class="form-control" value="{{ $professor->nome }}" />
       </div>
 
       <div class="form-group col-6">
         <label for="email">Email:</label>
-        <input type="text" name="email" id="email" value="{{ $professor->email }}" />
+        <input type="text" name="email" id="email" class="form-control" value="{{ $professor->email }}" />
       </div>
 
       <div class="form-group col-6">
         <label for="nome">CPF:</label>
-        <input type="text" name="cpf" id="cpf" value="{{ $professor->cpf }}" />
+        <input type="text" name="cpf" id="cpf" class="form-control" value="{{ $professor->cpf }}" />
       </div>
 
-      <div>
-        @csrf
-        <input type="hidden" name="id" value="{{ $professor->id }}" />
-        <button type="submit">Salvar</button>
-        <a href="/professor">Novo</a>
-      </div>
+      <div class="form-group col-6">
+			@csrf
+			<input type="hidden" id="id" name="id" value="{{ $professor->id }}" />
+			<a href="/professor" class="btn btn-primary" style="margin-top: 23px;">
+				<i class="bi bi-plus-square"></i> Novo
+			</a>
+			<button type="submit" class="btn btn-success" style="margin-top: 23px;">
+				<i class="bi bi-save"></i> Salvar
+			</button>
+		</div>
+  
     </form>
+    </div>
 
     <!-- ======= Trainers Section ======= -->
     <section id="trainers" class="trainers">

@@ -39,30 +39,24 @@ class ProfessorController extends Controller
 
         $professor->save();
 
-        return redirect("/professor");
+        $request->session()->flash("status", "salvo");
+		return redirect("/professor");
     }
 
-    
-    public function show($id)
-    {
-        //
-    }
-
-    
     public function edit($id)
     {
-        //
+        $professor = Professor::Find($id);
+		$professors = Professor::All();
+		return view("professor.index", [
+			"professor" => $professor,
+			"professors" => $professors
+		]);
     }
 
-    
-    public function update(Request $request, $id)
+    public function destroy($id, Request $request)
     {
-        //
-    }
-
-    
-    public function destroy($id)
-    {
-        //
+        Professor::Destroy($id);
+		$request->session()->flash("status", "excluido");
+		return redirect("/professor");
     }
 }
