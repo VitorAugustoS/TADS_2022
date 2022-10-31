@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProfessorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,22 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::Resources([
+    "professor" => ProfessorController::class
+]);
+
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/alunos', function () {
-    return view('alunos.index');
-});
-
-Route::get('/professores', function () {
-    return view('professores.index');
-});
-
-Route::get('/atividades', function () {
-    return view('atividades.index');
-});
-
-Route::get('/turmas', function () {
-    return view('turmas.index');
 });
