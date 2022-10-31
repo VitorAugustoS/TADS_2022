@@ -2,3 +2,8 @@
 
 @section("titulo", "Alunos")
 
+@section("principal")
+
+
+
+@endsection
