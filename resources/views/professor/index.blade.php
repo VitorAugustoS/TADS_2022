@@ -14,6 +14,30 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
+    <form method="POST" action="/professor">
+      <div class="form-group col-6">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" value="{{ $professor->nome }}" />
+      </div>
+
+      <div class="form-group col-6">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="{{ $professor->email }}" />
+      </div>
+
+      <div class="form-group col-6">
+        <label for="nome">CPF:</label>
+        <input type="text" name="cpf" id="cpf" value="{{ $professor->cpf }}" />
+      </div>
+
+      <div>
+        @csrf
+        <input type="hidden" name="id" value="{{ $professor->id }}" />
+        <button type="submit">Salvar</button>
+        <a href="/professor">Novo</a>
+      </div>
+    </form>
+
     <!-- ======= Trainers Section ======= -->
     <section id="trainers" class="trainers">
       <div class="container" data-aos="fade-up">

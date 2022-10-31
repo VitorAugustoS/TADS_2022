@@ -50,7 +50,7 @@
         <ul>
           <li><a class="active" href="/">Home</a></li>
           <li><a href="/alunos">Alunos</a></li>
-          <li><a href="/professores">Professores</a></li>
+          <li><a href="/professor">Professores</a></li>
           <li><a href="/turmas">Turmas</a></li>
           <li><a href="/atividades">Atividades</a></li>
 
